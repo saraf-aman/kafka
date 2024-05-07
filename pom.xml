@@ -11,6 +11,7 @@
     <modules>
         <module>kafka-basics</module>
         <module>wikimedia-producer</module>
+        <module>opensearch-consumer</module>
     </modules>
 
     <properties>

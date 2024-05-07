@@ -7,12 +7,12 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Handler implements EventHandler {
+public class WikimediaHandler implements EventHandler {
 
     KafkaProducer<String, String> kafkaProducer;
     String topic;
-    private final Logger log = LoggerFactory.getLogger(Handler.class.getSimpleName());
-    public Handler(KafkaProducer<String, String> kafkaProducer, String topic) {
+    private final Logger log = LoggerFactory.getLogger(WikimediaHandler.class.getSimpleName());
+    public WikimediaHandler(KafkaProducer<String, String> kafkaProducer, String topic) {
         this.kafkaProducer = kafkaProducer;
         this.topic = topic;
     }

@@ -10,7 +10,7 @@ import java.net.URI;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class Producer {
+public class WikimediaProducer {
     public static void main(String[] args) throws InterruptedException {
 
         String bootstrapServers = "127.0.0.1:9092";
@@ -30,7 +30,7 @@ public class Producer {
 
         String topic = "wikimedia.recentchange";
 
-        EventHandler eventHandler = new Handler(producer, topic);
+        EventHandler eventHandler = new WikimediaHandler(producer, topic);
         String url = "https://stream.wikimedia.org/v2/stream/recentchange";
         EventSource.Builder builder = new EventSource.Builder(eventHandler, URI.create(url));
         EventSource eventSource = builder.build();
